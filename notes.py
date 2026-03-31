@@ -26,3 +26,20 @@ def calculate(**keyword_arguments):
     for key, value in keyword_arguments.items():
         print(key, value)
 print(calculate(a=1,b=2,c=3))
+
+# Use **kwargs to create a Class
+class Car:
+    def __init__(self, **keyword_arguments):
+        # Use the get method instead of key[value] in the event the keyword_argument doesn't exist
+        self.make = keyword_arguments.get("make")
+        self.model = keyword_arguments.get("model")
+        self.year = keyword_arguments.get("year")
+        # Set the default unless argument is given in the **kwargs
+        self.price = keyword_arguments.get("price", 80000 )
+
+new_car = Car(make="Lexus", model="GX550", year=2021)
+print(new_car.make)
+print(new_car.model)
+print(new_car.year)
+# Price returns the default value since it was never set in the keyword_arguments
+print(new_car.price)
