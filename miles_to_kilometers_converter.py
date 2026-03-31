@@ -4,7 +4,7 @@ def miles_to_kilometers(miles):
     kilometers = miles*1.609344
     return kilometers
 def miles_to_kilometers_label_changer():
-    miles = int(miles_entry_box.get())
+    miles = float(miles_entry_box.get())
     # print(entry_box.get())
     kilometers = miles_to_kilometers(miles)
     label_to_display_kilometers.config(text=f"is equal to {kilometers} kilometers ")
