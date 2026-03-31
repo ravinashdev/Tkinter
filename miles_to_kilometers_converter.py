@@ -4,7 +4,7 @@ def miles_to_kilometers(miles):
     kilometers = miles*1.609344
     return kilometers
 def miles_to_kilometers_label_changer():
-    miles = int(entry_box.get())
+    miles = int(miles_entry_box.get())
     # print(entry_box.get())
     kilometers = miles_to_kilometers(miles)
     label_to_display_kilometers.config(text=f"is equal to {kilometers} kilometers ")
@@ -17,10 +17,10 @@ window.minsize(width=500, height=500)
 window.config(padx=150, pady=150)
 
 # User enter miles
-entry_box = Entry(width=10)
+miles_entry_box = Entry(width=10)
 #Add some text to begin with
-entry_box.insert(END,0)
-entry_box.grid(row=0, column=4)
+miles_entry_box.insert(END, 0)
+miles_entry_box.grid(row=0, column=4)
 
 # Label to display miles after conversion & for just miles
 kilometers =  0
